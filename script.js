@@ -5,7 +5,7 @@ $(document).ready(function () {
       $("#floating-video").hide();
       $("#popup-overlay").fadeIn();
       $("#popup-video").fadeIn();
-      $("#popup-video-player")[0].play();
+      $("#popup-video-player video")[0].play();
     });
 
     var windowHeight = $(window).height();
@@ -19,7 +19,7 @@ $(document).ready(function () {
       $("#floating-video").show();
       $("#popup-overlay").fadeOut();
       $("#popup-video").fadeOut();
-      $("#popup-video-player")[0].pause();
+      $("#popup-video-player video")[0].pause();
     });
 
     $("#floating-video .play-button").on("click", function () {
@@ -31,7 +31,7 @@ $(document).ready(function () {
     });
 
     $("#popup-video .sound-toggle").on("click", function () {
-      var videoPlayer = $("#popup-video-player")[0];
+      var videoPlayer = $("#popup-video-player video")[0];
       if (videoPlayer.muted) {
         videoPlayer.muted = false;
         $(this).css("fill", "#fff");
@@ -40,7 +40,7 @@ $(document).ready(function () {
         $(this).css("fill", "#ccc");
       }
     });
-    $("#popup-video-player").on("click", function () {
+    $("#popup-video-player video").on("click", function () {
       var video = $(this)[0];
       video.muted = !video.muted;
 
